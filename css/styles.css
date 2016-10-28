@@ -5,7 +5,7 @@ body {
 
 #black{
   background-color: black;
-  height: 700px;
+  height: 600px;
   padding: 0px;
   padding-top: 20px;
   color: white;
@@ -31,12 +31,13 @@ li {
 div.output {
 
   background: white;
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   position: relative;;
   font-size: 16px;
   padding-top: 35px;
-  margin-top: 275px;
+  margin-top: 250px;
+  float: left;
 }
 
 #text {

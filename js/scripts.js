@@ -24,51 +24,21 @@ $(document).ready(function(){
   $('.input form').submit(function(event){
     event.preventDefault();
     var userNumber = parseInt($('input#number').val());
+    if (!userNumber){
+      alert('You must enter a number');
+    }
     var pingPongArray = pingPongNumbers(userNumber);
-
+    $("li.num-list").remove();
     for (var i = 0; i < pingPongArray.length; i++){
-      $('#text').append('<li class="num-list"> --' + pingPongArray[i] + " </li>");
+      $('#text').append('<li class="num-list">--' + pingPongArray[i] + " </li>");
     }
 
     $("li.num-list").hide().each(function(number) {
-      $(this).delay( number * 400 ).fadeIn(0);
-      $(this).delay( number * 400 ).fadeOut(0);
-      $(".output").animate({left: $(this).parent().width()}, 500);
-      $(".output").animate({left:'-='+ $(this).parent().width()}, 500);
+      $(this).delay( number * 400 ).fadeIn();
+      $(this).delay( number * 400 ).fadeOut();
+      $(".output").animate({left: $(this).parent().width()}, 400);
+      $(".output").animate({left:'-='+ $(this).parent().width()}, 400);
     });
 
   });
 });
-
-// $('li.num-list').hide().each(function( i ) {
-//   $(this).delay( i * 700 ).fadeIn(0);
-//   $(this).delay( i * 700 ).fadeOut(0);
-//   $(".output").animate({left: '1200px'}, 700, function(){
-//     $(".output").animate({left: '-=1200px'}, 700);
-//   });
-
-
-
-
-
-
-
-
-// pingPongArray.forEach(function(element){
-// });
-
-//$(".output").animate({left: '100%'});
-//pingPongArray.forEach(function(number) {
-//  });
-    // for (var i = 0; i < pingPongArray.length; i++){
-    //   if (i % 2 === 0){
-    //     $('#output-left').append("<li>" + pingPongArray[i] + "</li>");
-    //   } else {
-    //     $('#output-right').append("<li>" + pingPongArray[i] + "</li>");
-    //   }
-    // }
-    // console.log(pingPongArray);
-    // pingPongArray.forEach(function(number){
-    //
-    //   $('.output').append("<p>" + number + "</p>");
-    //   $('.output').animate({left: '250px'});
