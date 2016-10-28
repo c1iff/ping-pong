@@ -1,0 +1,17 @@
+#black{
+  background-color: black;
+  height: 700px;
+  padding: 0px;
+}
+
+.input {
+  margin-bottom: 50px;
+}
+
+div.output {
+
+  background: white;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+}

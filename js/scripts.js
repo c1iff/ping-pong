@@ -20,13 +20,31 @@ var pingPongNumbers = function(input) {
 
 
 $(document).ready(function(){
-  $('.blanks form').submit(function(event){
+  $('.input form').submit(function(event){
     event.preventDefault();
     var userNumber = parseInt($('input#number').val());
     var pingPongArray = pingPongNumbers(userNumber);
-    pingPongArray.forEach(function(number){
-      console.log('hi' + number);
-      $('.display ul').append("<li>" + number + "</li>");
-    });
+    console.log(pingPongArray);
+
+  for (var i = 0; i < pingPongArray.length; i++){
+      $('#text').append(pingPongArray[i]);
+    }
   });
 });
+
+
+//$(".output").animate({left: '100%'});
+//pingPongArray.forEach(function(number) {
+//  });
+    // for (var i = 0; i < pingPongArray.length; i++){
+    //   if (i % 2 === 0){
+    //     $('#output-left').append("<li>" + pingPongArray[i] + "</li>");
+    //   } else {
+    //     $('#output-right').append("<li>" + pingPongArray[i] + "</li>");
+    //   }
+    // }
+    // console.log(pingPongArray);
+    // pingPongArray.forEach(function(number){
+    //
+    //   $('.output').append("<p>" + number + "</p>");
+    //   $('.output').animate({left: '250px'});
