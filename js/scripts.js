@@ -1,3 +1,4 @@
+//Back-end Logic
 var pingPongNumbers = function(input) {
   var numbers = [];
 
@@ -18,24 +19,40 @@ var pingPongNumbers = function(input) {
   return numberPingPongs;
 }
 
-
+//Front-end logic
 $(document).ready(function(){
   $('.input form').submit(function(event){
     event.preventDefault();
     var userNumber = parseInt($('input#number').val());
     var pingPongArray = pingPongNumbers(userNumber);
-    console.log(pingPongArray);
+
     for (var i = 0; i < pingPongArray.length; i++){
-      $('#text').append('<li class="num-list">' + pingPongArray[i] + "</li>");
+      $('#text').append('<li class="num-list"> --' + pingPongArray[i] + " </li>");
     }
-      $('li.num-list').hide().each(function( i ) {
-        $(this).delay( i * 400 ).fadeIn();
-        $(this).delay( i * 400 ).fadeOut();
-        $(".output").animate({left: '95%'}, 1000);
-        $(".output").animate({left: '-=95%'}, 1000);
-      });
+
+    $("li.num-list").hide().each(function(number) {
+      $(this).delay( number * 400 ).fadeIn(0);
+      $(this).delay( number * 400 ).fadeOut(0);
+      $(".output").animate({left: $(this).parent().width()}, 500);
+      $(".output").animate({left:'-='+ $(this).parent().width()}, 500);
+    });
+
   });
 });
+
+// $('li.num-list').hide().each(function( i ) {
+//   $(this).delay( i * 700 ).fadeIn(0);
+//   $(this).delay( i * 700 ).fadeOut(0);
+//   $(".output").animate({left: '1200px'}, 700, function(){
+//     $(".output").animate({left: '-=1200px'}, 700);
+//   });
+
+
+
+
+
+
+
 
 // pingPongArray.forEach(function(element){
 // });
