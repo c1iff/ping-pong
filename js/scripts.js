@@ -25,13 +25,20 @@ $(document).ready(function(){
     var userNumber = parseInt($('input#number').val());
     var pingPongArray = pingPongNumbers(userNumber);
     console.log(pingPongArray);
-
-  for (var i = 0; i < pingPongArray.length; i++){
-      $('#text').append(pingPongArray[i]);
+    for (var i = 0; i < pingPongArray.length; i++){
+      $('#text').append('<li class="num-list">' + pingPongArray[i] + "</li>");
     }
+      $('li.num-list').hide().each(function( i ) {
+        $(this).delay( i * 400 ).fadeIn();
+        $(this).delay( i * 400 ).fadeOut();
+        $(".output").animate({left: '95%'}, 1000);
+        $(".output").animate({left: '-=95%'}, 1000);
+      });
   });
 });
 
+// pingPongArray.forEach(function(element){
+// });
 
 //$(".output").animate({left: '100%'});
 //pingPongArray.forEach(function(number) {

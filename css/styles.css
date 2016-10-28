@@ -1,11 +1,25 @@
+body {
+  font-family: 'Press Start 2P', cursive;
+}
+
 #black{
   background-color: black;
   height: 700px;
   padding: 0px;
+  padding-top: 300px;
 }
 
-.input {
-  margin-bottom: 50px;
+li {
+  list-style-type: none;
+}
+
+.form-control {
+  width: 25%;
+  margin-left: 37.5%
+}
+.jumbotron {
+  margin-bottom: 0px;
+  text-align: center;
 }
 
 div.output {
@@ -14,4 +28,9 @@ div.output {
   height: 100px;
   width: 100px;
   position: absolute;
+  font-size: 20px;
+}
+
+#text {
+  display: block;
 }
